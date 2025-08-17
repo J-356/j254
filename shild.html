@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.SHIELD.MIL - Strategic Homeland Intelligence Division</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="shield-logo">
+                <div class="logo-circle">
+                    <div class="eagle-symbol">🦅</div>
+                </div>
+                <h1>S.H.I.E.L.D</h1>
+                <p>Strategic Homeland Intelligence Division</p>
+            </div>
+            
+            <div class="login-form">
+                <h2>CLASSIFIED ACCESS</h2>
+                <input type="text" id="username" placeholder="Agent ID" required>
+                <input type="password" id="password" placeholder="Security Code" required>
+                <button onclick="login()">ACCESS GRANTED</button>
+                <div class="options">
+                    <a href="#" onclick="showForgotPassword()">Forgot Security Code?</a>
+                    <a href="#" onclick="showSignup()">New Agent Registration</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Screen -->
+        <div id="signupScreen" class="screen">
+            <div class="signup-form">
+                <h2>AGENT REGISTRATION</h2>
+                <input type="text" id="newUsername" placeholder="Choose Agent ID" required>
+                <input type="password" id="newPassword" placeholder="Create Security Code" required>
+                <input type="email" id="email" placeholder="Secure Email" required>
+                <button onclick="signup()">REGISTER AGENT</button>
+                <button onclick="showLogin()" class="secondary">Back to Login</button>
+            </div>
+        </div>
+
+        <!-- Forgot Password Screen -->
+        <div id="forgotScreen" class="screen">
+            <div class="forgot-form">
+                <h2>SECURITY CODE RECOVERY</h2>
+                <input type="email" id="recoveryEmail" placeholder="Agent Email" required>
+                <button onclick="recoverPassword()">SEND RECOVERY CODE</button>
+                <button onclick="showLogin()" class="secondary">Back to Login</button>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div id="dashboard" class="screen">
+            <header class="dashboard-header">
+                <div class="agent-info">
+                    <span id="agentName">Agent Phoenix</span>
+                    <span class="clearance">LEVEL 7 CLEARANCE</span>
+                </div>
+                <button onclick="logout()" class="logout-btn">LOGOUT</button>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="mission-control">
+                    <h2>MISSION CONTROL CENTER</h2>
+                    
+                    <div class="control-panels">
+                        <div class="panel satellite-panel">
+                            <h3>🛰️ SATELLITE NETWORK</h3>
+                            <button onclick="accessSatellites()">ACCESS SATELLITES</button>
+                            <div id="satelliteData" class="data-display"></div>
+                        </div>
+
+                        <div class="panel camera-panel">
+                            <h3>📹 SURVEILLANCE GRID</h3>
+                            <button onclick="accessCameras()">ACCESS CAMERAS</button>
+                            <div id="cameraFeed" class="data-display"></div>
+                        </div>
+
+                        <div class="panel blueprint-panel">
+                            <h3>📋 INTELLIGENCE FILES</h3>
+                            <button onclick="accessBlueprints()">ACCESS BLUEPRINTS</button>
+                            <div id="blueprintData" class="data-display"></div>
+                        </div>
+
+                        <div class="panel map-panel">
+                            <h3>🗺️ TACTICAL MAPS</h3>
+                            <button onclick="accessMaps()">ACCESS MAPS</button>
+                            <div id="mapData" class="data-display"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
